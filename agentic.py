@@ -13,7 +13,6 @@ agent= create_react_agent(
     model= groq_llm,
     tools=[search],
     state_modifier= system_prompt)
-query="tell me the current trend in the nepal stock market"
+query="tell me the current trend in the  stock market"
 state={"message": query}
 response= agent.invoke(state)
-print(response)
