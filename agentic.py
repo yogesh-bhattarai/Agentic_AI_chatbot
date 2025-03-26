@@ -14,9 +14,9 @@ agent= create_react_agent(
     model= groq_llm,
     tools=[search],
     state_modifier= system_prompt)
-query="tell me the current trend in the  stock market"
+query="tell me about agentic ai"
 state={"message": query}
 response= agent.invoke(state)
 messages= response.get("messages")
 ai_message= [message.content for message in messages if isinstance(message,AIMessage)]
-print(ai_message)
+print(ai_message[-1])
