@@ -1,0 +1,1 @@
+A powerful AI chatbot that leverages GROQ LLM, Tavily Search, and a REACT agent to answer user queries with intelligence and real-time information. This project demonstrates how tool-based agents can enhance chatbot capabilities by integrating search results dynamically.
