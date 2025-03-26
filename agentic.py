@@ -5,6 +5,7 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langgraph.prebuilt import create_react_agent
+from langchain_core.messages import AIMessage
 system_prompt="act as a AI chatbot that who is smart enought to provide me an answer to any question i ask"
 
 groq_llm= ChatGroq(model= "llama-3.3-70b-versatile",api_key= "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")
@@ -16,3 +17,6 @@ agent= create_react_agent(
 query="tell me the current trend in the  stock market"
 state={"message": query}
 response= agent.invoke(state)
+messages= response.get("messages")
+ai_message= [message.content for message in messages if isinstance(message,AIMessage)]
+print(ai_message)
